@@ -38,6 +38,22 @@ This toolkit identifies loyal customers based on tenure, consistency, and revenu
 
 **That's it!** The script handles all data cleaning, calculations, and validation automatically.
 
+### Running the Executive Summary Report
+
+After running the main analysis, you can generate a high-level summary report:
+
+```bash
+python3 loyalty_summary_report.py
+```
+
+This automatically picks up the most recent `loyalty_analysis_*.csv` file and prints:
+- Status breakdown (Loyal / Not Qualified / Ineligible) with revenue
+- Top 10 loyal accounts and sample mid-range accounts
+- Reasons customers don't qualify
+- Loyal customer breakdown by segment
+
+The written version of this summary is in `loyalty_executive_summary.md`.
+
 ---
 
 ## File Structure
@@ -45,9 +61,11 @@ This toolkit identifies loyal customers based on tenure, consistency, and revenu
 ```
 loyalty-framework/
 ├── loyalty_analysis.py          # Main analysis script
+├── loyalty_summary_report.py    # Executive summary report script
 ├── loyalty_config.py             # Configuration file (thresholds)
 ├── customer_annual_revenue.csv   # Input data (you provide)
 ├── loyalty_analysis_*.csv        # Output files (timestamped)
+├── loyalty_executive_summary.md  # Executive summary (latest results)
 ├── README.md                     # This file
 └── DATA_DICTIONARY.md            # Output field definitions
 ```
